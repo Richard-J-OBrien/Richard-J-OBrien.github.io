@@ -169,7 +169,7 @@ Clayson, P. E., Baldwin, S. A., & Larson, M. J. (2013). How does noise affect am
 
 Luck, S. J. (2014). An introduction to the event-related potential technique, Second Edition. MIT press.
 
-Keil, A., Debener, S., Gratton, G., Junghöfer, M., Kappenman, E. S., Luck, S. J., ... & Yee, C. M. (2014). Committee report: publication guidelines and recommendations for studies using electroencephalography and magnetoencephalography. Psychophysiology, 51(1), 1-21.
+Keil, A., Debener, S., Gratton, G., JunghÃ¶fer, M., Kappenman, E. S., Luck, S. J., ... & Yee, C. M. (2014). Committee report: publication guidelines and recommendations for studies using electroencephalography and magnetoencephalography. Psychophysiology, 51(1), 1-21.
 
 Poli, R., Cinel, C., Citi, L., & Sepulveda, F. (2010). Reaction-time binning: A simple method for increasing the resolving power of ERP averages. Psychophysiology, 47(3), 467-485.
 
