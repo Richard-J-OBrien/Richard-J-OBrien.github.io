@@ -21,7 +21,7 @@ description: A virtual proof that I'm awesome
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
-  Author's home: "http://deanattali.com"
+  Author's home: ""
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -66,8 +66,8 @@ author:
 social-network-links:
   rss: true
   email: "rjobrienuw@gmail.com"
-  github: "https://github.com/Richard-J-OBrien"
-  linkedin: "https://www.linkedin.com/in/richard-o-brien-228898153/"
+  github: "Richard-J-OBrien"
+  linkedin: "richard-o-brien-228898153/"
 
 
 # Select which share links to show in posts
