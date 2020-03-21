@@ -22,7 +22,7 @@ description: A personal website where I showcase my thesis work and side project
 navbar-links:
   About Me: "aboutme"
   Resources:
-  - Thesis: "https://richard-j-obrien.github.io/thesis/"
+  - Thesis: "thesis"
   - Kizomba Visualizations: "https://richard-j-obrien.github.io/kizomba_visualizations/"
   Author's home: ""
 
