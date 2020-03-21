@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<style>
+body {
+  margin: 0px 0px 0px 200px;
+}
+
+.node {
+  font: 5 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  fill: #368BC1;
+}
+
+.node:hover {
+  fill: #D77E07;
+}
+
+.link {
+  stroke: steelblue;
+  stroke-opacity: .4;
+  fill: none;
+  pointer-events: none;
+}
+
+.node:hover,
+.node--source,
+.node--target {
+  font-weight: 600;
+}
+
+.node--source {
+  fill: #0000A0;
+}
+
+.node--target {
+  fill: #0000A0;
+}
+
+.link--source,
+.link--target {
+  stroke-opacity: 1;
+  stroke-width: 2px;
+}
+
+.link--source {
+  stroke: #D77E07;
+}
+
+.link--target {
+  stroke: #0000A0;
+}
+
+.d3-tip {
+  line-height: 1;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+</style>
+
+
+
+<body> 
+
+
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script type='text/javascript' src='/javascripts/jquery.tipsy.js'></script>
+<script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
+  <body>
+    <h2>Shipping in the Arctic. Answering the question of who.</h2>
+    <div class="hint" style="font-family: 'mindshare';font-style:italic;position:absolute; right:20px; bottom:15px; color:#52514F;">
+    </div>
+
+    <div id="chart"></div>
+  </body>
+  
+  
+  
+<script>
+
+ 
+ //based on http://mbostock.github.io/d3/talk/20111116/bundle.html
+var flaredata = [
+<!-- Traditional Kizomba -->
+{"name":"flare.kizomba.Traditional",
+ "size":3812,
+ "imports":["flare.interest.Climate & Environment", "flare.interest.Economy","flare.interest.Security, Safety & Defence","flare.interest.Health & Social","flare.interest.Inuit Interests"]},
+
+ {"name":"flare.kizomba.Basic One",
+ "size":3812,
+ "imports":["flare.interest.Economy","flare.interest.Security, Safety & Defence"]},
+ 
+  {"name":"flare.kizomba.Basic Two",
+ "size":3812,
+ "imports":["flare.interest.Economy","flare.interest.Security, Safety & Defence"]},
+  
+ {"name":"flare.kizomba.Basic Three",
+ "size":3812,
+ "imports":["flare.interest.Economy","flare.interest.Security, Safety & Defence"]}, 
+ 
+{"name":"flare.kizomba.Women's Saida",
+ "size":3812,
+ "imports":["flare.interest.Climate & Environment","flare.interest.Security, Safety & Defence"]},
+  
+ {"name":"flare.kizomba.Men's Saida",
+ "size":3812,
+ "imports":["flare.interest.Climate & Environment","flare.interest.Security, Safety & Defence"]}, 
+  
+ <!-- Tarraxo -->
+ {"name":"flare.tarraxo.Knee Connection",
+ "size":3812,
+ "imports":["flare.interest.Climate & Environment", "flare.interest.Economy","flare.interest.Health & Social","flare.interest.Inuit Interests"]},
+ 
+ {"name":"flare.tarraxo.Fan",
+ "size":3812,
+ "imports":["flare.interest.Economy", "flare.interest.Security, Safety & Defence","flare.interest.Health & Social"]},
+ 
+ {"name":"flare.tarraxo.Basic One Popping",
+ "size":3812,
+ "imports":["flare.kizomba.Basic One"]},
+ 
+  {"name":"flare.tarraxo.Upper Body Fan",
+ "size":3812,
+ "imports":["flare.interest.Economy","flare.interest.Security, Safety & Defence"]},
+ 
+  {"name":"flare.tarraxo.Basic Two Syncopated",
+ "size":3812,
+ "imports":["flare.kizomba.Basic Two"]},
+ 
+ <!-- Tarraxa -->
+  {"name":"flare.tarraxa.Shoulder Popping",
+ "size":3812,
+ "imports":["flare.interest.Climate & Environment", "flare.interest.Economy","flare.interest.Security, Safety & Defence","flare.interest.Health & Social","flare.interest.Inuit Interests"]},
+ 
+ {"name":"flare.local.Inuit Population",
+ "size":3812,
+ "imports":["flare.interest.Climate & Environment", "flare.interest.Economy","flare.interest.Security, Safety & Defence","flare.interest.Health & Social","flare.interest.Inuit Interests"]},
+  
+  {"name":"flare.local.Northern Population",
+ "size":3812,
+ "imports":["flare.interest.Climate & Environment", "flare.interest.Economy","flare.interest.Security, Safety & Defence","flare.interest.Health & Social"]},
+  
+  {"name":"flare.local.Territorial Governments",
+ "size":3812,
+ "imports":["flare.interest.Climate & Environment", "flare.interest.Economy","flare.interest.Security, Safety & Defence","flare.interest.Health & Social","flare.interest.Inuit Interests"]},
+ 
+ {"name":"flare.international.national.Chartering Companies",
+ "size":3812,
+ "imports":["flare.interest.Economy","flare.interest.Security, Safety & Defence"]},
+ 
+ {"name":"flare.international.national.Insurance Companies",
+ "size":3812,
+ "imports":["flare.interest.Climate & Environment", "flare.interest.Economy","flare.interest.Security, Safety & Defence"]},
+ 
+ {"name":"flare.international.national.International Shipping Industry",
+ "size":3812,
+ "imports":["flare.interest.Economy","flare.interest.Security, Safety & Defence"]},
+ 
+ {"name":"flare.international.national.Mining Industry",
+ "size":3812,
+ "imports":["flare.interest.Economy","flare.interest.Security, Safety & Defence"]},
+ 
+  {"name":"flare.interest.Climate & Environment",
+ "size":743, 
+ "imports":[]},
+{"name":"flare.interest.Economy",
+ "size":3534,
+ "imports":[]},
+{"name":"flare.interest.Security, Safety & Defence",
+ "size":5731,
+ "imports":[]},
+{"name":"flare.interest.Health & Social",
+ "size":7840,
+ "imports":[]},
+{"name":"flare.interest.Inuit Interests",
+ "size":5914,
+ "imports":[]}
+];
+
+var diameter = 1000,
+    radius = diameter / 2,
+    innerRadius = radius - 190;
+
+var cluster = d3.layout.cluster()
+    .size([360, innerRadius])
+    .sort(null);
+    //.value(function(d) { return d.size; });
+
+var bundle = d3.layout.bundle();
+
+var tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([-10, 0])
+  .html(function(d) {
+    return "<strong>Description:</strong> <span style='color:orange'>" + d.citation + "</span>";
+  });
+
+var line = d3.svg.line.radial()
+    .interpolate("bundle")
+    .tension(.85)
+    .radius(function(d) { return d.y; })
+    .angle(function(d) { return d.x / 180 * Math.PI; });
+
+var svg = d3.select("body").append("svg")
+    .attr("width", diameter)
+    .attr("height", diameter)
+    .append("g")
+    .attr("transform", "translate(" + radius + "," + radius + ")")
+    .call(tip);
+
+var link = svg.append("g").selectAll(".link"),
+    node = svg.append("g").selectAll(".node");
+
+
+//d3.json(flaredata, function(error, classes) {
+  var nodes = cluster.nodes(packageHierarchy(flaredata)),
+      links = packageImports(nodes),
+      splines = bundle(links);
+
+  link = link
+      .data(bundle(links))
+      .enter().append("path")
+      .each(function(d) { d.source = d[0], d.target = d[d.length - 1]; })
+      .attr("class", "link")
+      .attr("d", line);
+
+  node = node
+      .data(nodes.filter(function(n) { return !n.children; }))
+    .enter().append("text")
+      .attr("class", "node")
+      .attr("dy", ".31em")
+      .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + (d.y + 8) + ",0)" + (d.x < 180 ? "" : "rotate(180)"); })
+      .style("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+      .text(function(d) { return d.key; })
+      .on("mousedown", tip.show)
+      .on("mouseup", tip.hide)
+      .on("mouseover", mouseovered)
+      .on("mouseout", mouseouted);
+//});
+function tipshow(d) {
+    d3.select(this).append("text")
+        .attr("class", "mousedown")
+        .attr('transform', function(d){ 
+            return 'translate(5, -10)';
+        })
+        .text(d.citation);
+    }
+
+function mouseovered(d) {
+  node
+      .each(function(n) { n.target = n.source = false; });
+
+  link
+      .classed("link--target", function(l) { if (l.target === d) return l.source.source = true; })
+      .classed("link--source", function(l) { if (l.source === d) return l.target.target = true; })
+    .filter(function(l) { return l.target === d || l.source === d; })
+      .each(function() { this.parentNode.appendChild(this); });
+
+  node
+      .classed("node--target", function(n) { return n.target; })
+      .classed("node--source", function(n) { return n.source; });
+}
+
+function mouseouted(d) {
+  link
+      .classed("link--target", false)
+      .classed("link--source", false);
+
+  node
+      .classed("node--target", false)
+      .classed("node--source", false);
+}
+
+d3.select(self.frameElement).style("height", diameter + "px");
+
+// Lazily construct the package hierarchy from class names.
+function packageHierarchy(classes) {
+  var map = {};
+
+  function find(name, data) {
+    var node = map[name], i;
+    if (!node) {
+      node = map[name] = data || {name: name, children: []};
+      if (name.length) {
+        node.parent = find(name.substring(0, i = name.lastIndexOf(".")));
+        node.parent.children.push(node);
+        node.key = name.substring(i + 1);
+      }
+    }
+    return node;
+  }
+
+  classes.forEach(function(d) {
+    find(d.name, d);
+  });
+
+  return map[""];
+}
+
+// Return a list of imports for the given array of nodes.
+function packageImports(nodes) {
+  var map = {},
+      imports = [];
+
+  // Compute a map from name to node.
+  nodes.forEach(function(d) {
+    map[d.name] = d;
+  });
+
+  // For each import, construct a link from the source to target node.
+  nodes.forEach(function(d) {
+    if (d.imports) d.imports.forEach(function(i) {
+      imports.push({source: map[d.name], target: map[i]});
+    });
+  });
+
+  return imports;
+}
+
+</script>
+</body>
