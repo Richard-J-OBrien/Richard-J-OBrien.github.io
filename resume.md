@@ -1,5 +1,4 @@
-## Richard O’Brien
-### 2747 Quadra St., Victoria, BC	   
+### Victoria, BC	   
 ### (778) 676-8201	
 ### rjobrienuw@gmail.com
 ### https://richard-j-obrien.github.io/
