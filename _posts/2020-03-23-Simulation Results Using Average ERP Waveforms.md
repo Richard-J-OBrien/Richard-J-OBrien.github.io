@@ -1,7 +1,8 @@
+---
 ## Simulation Results Using Average ERP Waveforms
 ---
 
-##### Design Option 1
+#### Design Option 1
 
 The experimental design and results revolve around using a population dataset that contains average ERP waveforms.
 
