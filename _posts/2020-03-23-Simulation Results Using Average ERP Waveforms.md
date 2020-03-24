@@ -1,6 +1,9 @@
 ---
-## Simulation Results Using Average ERP Waveforms
+layout: post
+title: Simulation Results Using Average ERP Waveforms
+subtitle: Thesis - Design Option 1
 ---
+
 
 #### Design Option 1
 
