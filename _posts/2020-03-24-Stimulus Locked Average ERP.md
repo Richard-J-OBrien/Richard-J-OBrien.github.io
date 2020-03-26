@@ -4,6 +4,7 @@ title: Stimulus-Locked ERP Simulation Code
 ---
 
 This simulation code adds 0.5 microvolts to the 300 - 500 ms window for each 0.1 increase in effect size.
+1000 simulations are run.
 
 ---
 ```matlab
@@ -31,13 +32,13 @@ filelist = dir(fullfile(import_path, '*.set'));
 %====================================%
 %PARAMETERS
 %====================================%
-sample_sizes = {50};    %Sample sizes range from 10 to 50 by 10
+sample_sizes = {20, 30, 40, 50};         %Sample sizes range from 10 to 50 by 10
 
-effect_sizes = {0, 0.1};                     %Effect sizes range from 0 to 0.5 by 0.1
+effect_sizes = {0, 0.1, 0.2, 0.3};       %Effect sizes range from 0 to 0.5 by 0.1
 
-simulations = 1:500;                    %Running tests with 500 simulations
+simulations = 1:1000;                    %Running tests with 500 simulations
 
-participants = 1:20;                    %Using 20 participants based on literature
+participants = 1:20;                     %Using 20 participants based on literature
 
 %====================================%
 %INITIATING VARIABLES
