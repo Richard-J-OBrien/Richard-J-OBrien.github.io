@@ -15,11 +15,11 @@ Following some feedback I went back to the drawing board to develop a new simula
 #### Simulation Code - Matlab
 I then started to focus on the building the simulation code in Matlab that will be used to generate the results of the experiment.
 
-- PLACEHOLDER FOR MATLAB CODE
+- [Stimulus-Locked ERP Simulation Code](https://richard-j-obrien.github.io/2020-03-24-Stimulus-Locked-Average-ERP/)
 
 
 ---
 At this point in time I'm testing whether the simulation code works properly.
 
 #### Analysis/Visualization Code - R
-- [Simulation Procedure](https://richard-j-obrien.github.io/2020-03-21-new-simulation-procedure/)
+- [Simulation Procedure v3.0](https://richard-j-obrien.github.io/2020-03-25-New-Simulation-Procedure-v3.0/)
