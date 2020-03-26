@@ -1,3 +1,11 @@
+---
+layout: post
+title: Stimulus-Locked ERP Simulation Code
+---
+
+This simulation code adds 0.5 microvolts to the 300 - 500 ms window for each 0.1 increase in effect size.
+
+---
 ```matlab
 
 %Control condition = 1
