@@ -29,13 +29,18 @@ In "simulation procedures v3.0 & v3.1", I was loading thousands of csv files int
 - [Simulation Procedure v3.1](https://richard-j-obrien.github.io/2020-03-26-New-Simulation-Procedure-v3.1/)
 
 ---
-In "simulation procedure v4.0", I merged all csv files into one large csv file using the command prompt: *copy *.csv merged.csv*. When loaded into R, this merged.csv file is ~ 96 million rows.
+
+{: .box-note}
+**Notes:** In "simulation procedure v4.0 & v4.1", I merged all csv files into one large csv file using the command prompt: *copy *.csv merged.csv*. When loaded into R, this merged.csv file is ~ 96 million rows. The population data contains ~ 1800 single trials. It might be worthwhile to reduce the population data size to ~ 1500 single trials to see how the distributions change.
 
 
-- [Simulation Procedure v4.0](https://richard-j-obrien.github.io/2020-03-28-New-Simulation-Procedure-v4.0/)
-- [Simulation Procedure v4.1](https://richard-j-obrien.github.io/2020-03-28-New-Simulation-Procedure-v4.1/)
+- [Simulation Procedure v4.0](https://richard-j-obrien.github.io/2020-03-28-New-Simulation-Procedure-v4.0/): ~1800 single trials - 20 participants - adding a standardized effect size (e.g., 0.5 microvolts for each 0.1 increase in effect size)
+- [Simulation Procedure v4.1](https://richard-j-obrien.github.io/2020-03-28-New-Simulation-Procedure-v4.1/)~1800 single trials - 20 participants - adding a standardized effect size generated using the population data's standard deviation
 
 ---
-In "simulation procedure v5.0", I'm going to attempt to reduce the size of the *merged.csv* file so that I can speed up the analysis.
+
+{: .box-note}
+**Notes:** In "simulation procedure v5.0", I'm going to add a few tables to understand the anova distributions. I may try to visualize this data in Tableau.
+
 
 
