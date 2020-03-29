@@ -10,7 +10,7 @@ This code represents my initial attempt to build a simulation experiment. I brok
 ---
 #### Previous Simulation Results - Tableau
 Initially I developed a simulation experiment that used average ERP waveforms as the population dataset.
-- [Simulation Results - Average ERP Waveforms](https://richard-j-obrien.github.io/2020-03-23-Simulation-Results-Using-Average-ERP-Waveforms/)
+- [Old Simulation Results - Average ERP Waveforms](https://richard-j-obrien.github.io/2020-03-23-Simulation-Results-Using-Average-ERP-Waveforms/)
 
 ---
 #### Visualizing the Experimental Methodology - R
