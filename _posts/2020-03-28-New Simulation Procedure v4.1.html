@@ -393,6 +393,74 @@ simulation_analysis = function(files, path){
   
 }</code></pre>
 <p>RUNNING THE DATA IN CHUNKS Because the data is so large I’ll run 10 simulations at a time</p>
+<pre class="r"><code>#Specifying the path to the simulation data
+path = &quot;C:/Users/rjobrien/Desktop/Personal Projects/Thesis Data/avg output2/&quot;
+code_path = &quot;C:/Users/rjobrien/Desktop/Personal Projects/Thesis Code/&quot;
+
+#Listing all of the csv files created by matlab
+# file_names = list.files(path, pattern = &quot;*.csv&quot;)
+
+#Creating a variable that will enable chunks of files to be run individually instead of all files at 1 time
+# chunks = split(1:1000, cut_number(1:1000, 100))
+
+#Initializing empty dataframes to hold all of the P3 amplitude peak data and p-value data
+all_peak_methods = data.frame()
+all_models = data.frame()
+
+
+#Loop over chunks of files to load in the data, extract the P3 amplitudes, and then run ANOVA models
+# for (i in chunks) {
+  
+  #Select out all of the file names related to that chunk
+  # file_names_sample = file_names[sapply(strsplit(file_names, &quot;_&quot;), `[`, 1) %in% unlist(i)]
+  file_names_sample = &quot;merged.csv&quot;
+  
+  #Load all of the data related to the file name sample
+  data_stimulus_locked = paste0(path,
+  file_names_sample) %&gt;%
+  map_df( ~ fread(.))
+
+
+  #Rename columns
+  colnames(data_stimulus_locked) = c(&quot;PZ&quot;,
+                                      &quot;sample_size&quot;,
+                                      &quot;effect_size&quot;,
+                                      &quot;condition&quot;,
+                                      &quot;sample&quot;,
+                                      &quot;participant&quot;)
+
+  #Need to add a time column. The 150 rows represents a 0-600 ms window that was extracted in Matlab.
+  data_stimulus_locked$time = rep(1:151, nrow(data_stimulus_locked) / 151) * 4
+
+
+  #CALCULATING P3 AMPLITUDES USING THE THREE PEAK-PICKING METHODOLOGIES
+  peak_methods = calculating_peaks(data_stimulus_locked)
+
+  #Appending the P3 amplitude data from each set of data being processed to a single dataset
+  all_peak_methods = rbind(all_peak_methods, peak_methods)
+  
+  
+  models &lt;-
+  plyr::ddply(peak_methods, c(&quot;sample&quot;, &quot;sample_size&quot;, &quot;effect_size&quot;), function(df)
+  c(anova(lm(
+  PZ ~ condition * method, data = df
+  ))$'Pr(&gt;F)'[1],
+  anova(lm(
+  PZ ~ condition * method, data = df
+  ))$'Pr(&gt;F)'[2]))
+
+
+  models = dplyr::rename(models, condition_pvalues = V1, method_pvalues = V2)
+
+  all_models = rbind(all_models, models)
+  
+  
+  #Calling the custom simulation analysis function to generate all p-values and appending these values to a single dataset
+  # all_models = simulation_analysis(file_names_sample, path)
+  
+# }
+
+save.image(file = paste0(code_path, &quot;new simulation data v4.1.RData&quot;))</code></pre>
 <p>ANIMATE HISTOGRAMS OF P3 AMPLITUDES</p>
 <pre class="r"><code>load(&quot;C:/Users/rjobrien/Desktop/Personal Projects/Thesis Code/new simulation data v4.1.RData&quot;)
 
