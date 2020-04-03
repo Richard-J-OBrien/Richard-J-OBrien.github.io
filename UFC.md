@@ -12,4 +12,5 @@ I decided to test out the "highcharter" package in R too see if it would be feas
 
 
 ---
+Using Tableau I used the first webscraper's data to generate visuals that compare weightclasses career statistics.
 - [UFC Career Statistics Breakdown](https://public.tableau.com/profile/richard2368#!/vizhome/UFCCareerStatisticsBreakdown/Dashboard1)
