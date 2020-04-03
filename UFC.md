@@ -9,3 +9,7 @@ The first step in the process is to gather the UFC data: [Webscraping UFC Data](
 #### Exploratory Data Analysis
 
 I decided to test out the "highcharter" package in R too see if it would be feasible to make some nice interactive visuals with the UFC data: [UFC visuals](https://richard-j-obrien.github.io/2020-03-24-Interactive-Highcharter/). While highcharter is a great package, it didn't seem feasible to spend that much time generating all the visuals I wanted.
+
+
+---
+- [UFC Career Statistics Breakdown](https://public.tableau.com/profile/richard2368#!/vizhome/UFCCareerStatisticsBreakdown/Dashboard1)
