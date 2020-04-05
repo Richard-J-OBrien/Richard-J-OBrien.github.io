@@ -62,4 +62,6 @@ After running the most recent simulation procedure (v4.0), I visualized the dist
 
 - [Simulation Results - Single Trial ERP Waveforms](https://public.tableau.com/profile/richard2368#!/vizhome/NewThesisSimulationResults/SimulationResults)
 
-In the *P3 Distribution with Overlapping Conditions* dashboard I noticed that I was generating a control condition for each of the effect sizes when really I only needed one control condition, that being, the one generated using an effect size of 0. To fix this issue I simply deleted the other control conditions being produced by effect sizes 0.1 and up.
+---
+{: .box-note}
+**Notes:** In the *P3 Distribution with Overlapping Conditions* dashboard I noticed that I was generating a control condition for each of the effect sizes when really I only needed one control condition, that being, the one generated using an effect size of 0. To fix this issue I simply deleted the other control conditions being produced by effect sizes 0.1 and up.
