@@ -18,3 +18,5 @@ I decided to test out the "highcharter" package in R too see if it would be feas
   With the second webscraper's data I generated visuals to compare individuals performance.
   - [UFC Individual Fighter Statistics Breakdown](https://public.tableau.com/profile/richard2368#!/vizhome/UFCFighterCareerStatisticsBreakdown/Individualvs_WeightClass)
 
+  Using historical data I started visualizing the way fights finished across time and round.
+  - [UFC Fights: A Historical Perspective](https://public.tableau.com/profile/richard2368#!/vizhome/UFCHistoricalPerspective/Dashboard1)
