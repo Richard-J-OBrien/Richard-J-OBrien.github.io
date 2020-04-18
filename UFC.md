@@ -20,3 +20,9 @@ I decided to test out the "highcharter" package in R too see if it would be feas
 
   Using historical data I started visualizing the way fights finished across time and round.
   - [UFC Fights: A Historical Perspective](https://public.tableau.com/profile/richard2368#!/vizhome/UFCHistoricalPerspective/Dashboard1)
+  
+
+---
+Considering more of the descriptive statistics have been visualized and presented in the Tableau dashboards I decided to conduct some more advanced statistical analysis. My first step was to begin to understand the relationships at the career level. Looking at all individuals career statistics across all weightclasses, I applied a correlation to determine the strength and direction of the relationships between fight statistics (e.g., strike accuracy, takedown defence, etc.).
+  - [UFC Career Statistics Correlations](https://richard-j-obrien.github.io/2020-04-18-Advanced-Statistics-Analysis-Part-1/)
+  
