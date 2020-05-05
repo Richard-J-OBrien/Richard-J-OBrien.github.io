@@ -65,7 +65,7 @@ In "simulation procedures v3.0 & v3.1", I was loading thousands of csv files int
 #### Simulation Results - Tableau
 After running the most recent simulation procedure (v4.0), I visualized the distirbutions of the P3 amplitudes and p-values.
 
-- [Simulation Results - Single Trial ERP Waveforms v1.0](https://public.tableau.com/profile/richard2368#!/vizhome/NewThesisSimulationResults/SimulationResults)
+
 
 ---
 
