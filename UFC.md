@@ -17,11 +17,9 @@ The first step in the process is to gather the UFC data:
 ##### Descriptive Statistical Analysis
 Beginning the exploratory data analysis with visualizations, I generated several dashboards that offer varying perspectives and detail.
   
-- [UFC Career Statistics Breakdown](https://public.tableau.com/profile/richard2368#!/vizhome/UFCCareerStatisticsBreakdown/Dashboard1)
+- [UFC Individual Fighter Statistics Breakdown](https://public.tableau.com/profile/richard2368#!/vizhome/UFCFighterCareerStatisticsBreakdownv2_0/Individualvs_WeightClass)
 
-- [UFC Individual Fighter Statistics Breakdown](https://public.tableau.com/profile/richard2368#!/vizhome/UFCFighterCareerStatisticsBreakdown/Individualvs_WeightClass)
-
-- [UFC Fights: A Historical Perspective](https://public.tableau.com/profile/richard2368#!/vizhome/UFCHistoricalPerspective/Dashboard1)
+- [UFC Fights: A Historical Perspective](https://public.tableau.com/profile/richard2368#!/vizhome/UFCHistoricalPerspectivev2_0/UFCFinishesOverTime)
   
 
 ---
