@@ -1,6 +1,6 @@
 ### Purpose:
 
-The purpose of this project is to allow users to derive insights from UFC data that may aid in their improvement.
+The purpose of this project is to allow users to derive insights from UFC data and improve their understanding of the sport from a statistical perspective.
 
 To fulfill this purpose UFC data will be gathered, visualized, and analyzed to draw general insights. Varying levels of detail will be added to allow users to perform comparisons between individual fighters and weightclasses.
 
@@ -15,7 +15,7 @@ The first step in the process is to gather the UFC data:
 
 ---
 ##### Descriptive Statistical Analysis
-Beginning the exploratory data analysis with visualizations, I generated several dashboards that offer varying perspectives and detail.
+Beginning the exploratory data analysis with visualizations, several dashboards have been produced to offer varying perspectives (e.g., from an individual and weightclass perspective).
   
 - [UFC Individual Fighter Statistics Breakdown](https://public.tableau.com/profile/richard2368#!/vizhome/UFCFighterCareerStatisticsBreakdownv2_0/Individualvs_WeightClass)
 
@@ -24,7 +24,8 @@ Beginning the exploratory data analysis with visualizations, I generated several
 
 ---
 ##### Advanced Statistical Analysis
-Considering more of the descriptive statistics have been visualized and presented in the Tableau dashboards I decided to conduct some more advanced statistical analysis. My first step was to begin to understand the relationships at the career level. Looking at all individuals career statistics across all weightclasses, I applied a correlation to determine the strength and direction of the relationships between fight statistics (e.g., strike accuracy, takedown defence, etc.).
+Considering more of the descriptive statistics have been visualized and presented in the Tableau dashboards, advanced statistical analysis was conducted. A correlation analysis was chosen to examinine strength and direction of the relationship between fight metrics (e.g., strike accuracy, takedown defence, etc.) within a given weightclass.
+
 
 - [UFC Career Statistics Correlations](https://richard-j-obrien.github.io/2020-04-18-Advanced-Statistics-Analysis-Part-1/)
   
